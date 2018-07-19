@@ -1,0 +1,32 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+</head>
+
+<h1>Add Playlist</h1>
+
+<form action="/playlists" method="POST">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" name="name">
+    </div>
+    <div>
+        <label for="name">Number of tracks: </label>
+        <input type="text" name="NumberOfTracks">
+    </div>
+    <div>
+        <button class="btn btn-outline-primary" type="submit">Submit</button>
+    </div>
+</form>
+
+<hr>
+<h2>Playlists</h2>
+<hr>
+<table>
+{{#each playlists}}
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">{{Name}}
+     <p style="color:lightslategray;">{{NumberOfTracks}} Songs</p></li>
+</ul>
+
+{{/each}}
+</table>
